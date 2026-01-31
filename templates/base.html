@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Website Scanner{% endblock %}</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      {% block head %}{% endblock %}
+  </head>
+<body>
+      <nav class="navbar">
+                <div class="nav-container">
+                              <a href="{{ url_for('index') }}" class="nav-brand">Website Scanner</a>a>
+                              <div class="nav-modules">
+                                                <a href="{{ url_for('analyzer') }}" class="nav-module {% if request.endpoint == 'analyzer' or request.endpoint == 'index' %}active{% endif %}">Analyzer</a>a>
+                                                <a href="{{ url_for('accounts') }}" class="nav-module {% if request.endpoint == 'accounts' %}active{% endif %}">Accounts</a>a>
+                              </div>div>
+                </div>div>
+      </nav>nav>
+      <main class="main-content">
+                {% block content %}{% endblock %}
+      </main>main>
+      {% block scripts %}{% endblock %}
+</body>
+</html>html>
+</body></title>
+  </head>
